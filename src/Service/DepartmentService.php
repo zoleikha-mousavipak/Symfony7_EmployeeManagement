@@ -7,9 +7,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DepartmentService {
 
-    private $departmentRepository;
-
-    public function __construct(DepartmentRepository $departmentRepository) {
+    public function __construct(
+        private DepartmentRepository $departmentRepository
+        ) {
         $this->departmentRepository = $departmentRepository;
     }
 

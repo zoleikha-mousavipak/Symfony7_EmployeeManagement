@@ -8,9 +8,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class EmployeeService {
 
-    private $employeeRepository;
-
-    public function __construct(EmployeeRepository $employeeRepository) {
+    public function __construct(
+        private EmployeeRepository $employeeRepository
+        ) {
         $this->employeeRepository = $employeeRepository;
     }
 
