@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Employees{% endblock %}
+
+{% block bread %}
+→ Subordinates
+{% endblock %} 
+
+{% block body %}
+
+<div class="mb-2">
+  <p> Eine Hierarchische Darstellung von Vorgesetzter-Untergebener-Beziehungen. Von einem Beschäftigten (parametrisierbar),</br>
+   soll also eine rekursive Liste seiner Untergebenen und deren Untergebenen usw. generiert werden.</p>
+</div> 
+<div class="mb-5">
+  <hr>
+</div> 
+
+{% include 'employee/subordinates.html.twig' with {'employee': employee, 'subordinates': subordinates} %}
+
+{% endblock %}

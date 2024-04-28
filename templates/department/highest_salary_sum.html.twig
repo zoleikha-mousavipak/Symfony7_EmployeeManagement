@@ -1,0 +1,30 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Departments{% endblock %}
+
+{% block bread %}
+→ Departments
+{% endblock %}
+
+{% block body %}
+
+<div class="mb-2">
+  <p> Abteilung(en) mit höchsten Gesamtausgaben für Gehälter</p>
+</div> 
+<div class="mb-5">
+  <hr>
+</div> 
+
+  {% if departments|length > 0 %}
+    {% for department in departments %}
+    <div class="mb-4">  
+    <div class="text-2xl">      
+        Department's name: {{ department[0].name}}
+    </div>  
+    </div> 
+    {% endfor %}
+    {% else %}
+      There's nothing here!
+    {% endif %}
+
+{% endblock %}

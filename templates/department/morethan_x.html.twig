@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Departments{% endblock %}
+
+{% block bread %}
+→ Departments
+{% endblock %} 
+
+{% block body %}
+
+<div class="mb-2">
+  <p> Liste aller Abteilungen mit mehr als X Beschäftigten.</br>
+   X ist ein Parameter, der eine beliebige nicht negative Zahl annehmen kann. </p>
+</div> 
+<div class="mb-5">
+  <hr>
+</div> 
+
+{%  if error %}
+  {{ error }}
+{%  else %}
+  {% if departments|length > 0 %}
+    {% for department in departments %}
+    <div class="mb-4">  
+    <div class="text-2xl">      
+        Department's name: {{ department[0].name}}
+    </div>  
+    
+    </div> 
+    {% endfor %}
+    {% else %}
+      There's nothing here!
+    {% endif %}
+
+{%  endif %}
+{% endblock %}

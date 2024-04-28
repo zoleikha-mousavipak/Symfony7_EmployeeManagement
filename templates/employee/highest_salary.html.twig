@@ -1,0 +1,38 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Employees{% endblock %}
+
+{% block bread %}
+→ Employees
+{% endblock %} 
+
+{% block body %}
+
+<div class="mb-2">
+  <p> Beschäftigte mit jeweils höchstem Gehalt pro Abteilung.</p>
+</div> 
+<div class="mb-5">
+  <hr>
+</div> 
+
+  {% if employees|length > 0 %}
+    {% for employee in employees %}
+    <div class="mb-4">  
+    <div class="text-2xl">      
+        {{ employee[0].name }}
+    </div>  
+    <div class="text-xl dark:text-gray-400">      
+        Salary: {{ employee[0].salary }}
+    </div>   
+
+    <div class="text-sm text-gray-400 dark:text-gray-500">      
+            Department: {{ employee[0].department.name }}
+    </div> 
+
+    </div> 
+    {% endfor %}
+    {% else %}
+      There's nothing here!
+    {% endif %}
+
+{% endblock %}

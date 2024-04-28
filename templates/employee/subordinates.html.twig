@@ -1,0 +1,17 @@
+<h1>Subordinates of {{ employee.name }}</h1>
+
+    <ul>
+        {% for subordinate in subordinates %}
+            <li>
+                * {{ subordinate.employee.name }}
+                {% if subordinate.subordinates is not empty %}
+                    <ul>
+                        -> {% include 'employee/subordinates.html.twig' with {'employee': subordinate.employee, 'subordinates': subordinate.subordinates} %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+
+
