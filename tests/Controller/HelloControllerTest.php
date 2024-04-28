@@ -12,6 +12,6 @@ class HelloControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h2', "Welcome to Employee's App");
+        $this->assertSelectorTextContains('h2', "Welcome to Employee Management Web Application!");
     }
 }
