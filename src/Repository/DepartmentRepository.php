@@ -24,6 +24,7 @@ class DepartmentRepository extends ServiceEntityRepository
 
      /**
      * Liste aller Abteilungen mit mehr als X Beschäftigten. X ist ein Parameter, der eine
+     * beliebige nicht negative Zahl annehmen kann.
      *
      * @param [type] $x
      * @return array
